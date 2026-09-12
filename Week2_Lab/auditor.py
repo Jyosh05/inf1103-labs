@@ -18,4 +18,10 @@ while True:
         print("Negative numbers are not allowed")
         failed_entries += 1
         continue
+
     
+    inventory += stock
+
+    if inventory > 500:
+         print("Inventory exceeds 500 units")
+         break
