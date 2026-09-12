@@ -25,3 +25,8 @@ while True:
     if inventory > 500:
          print("Inventory exceeds 500 units")
          break
+
+
+    print("Total Units Processed: ", inventory)
+    print("Number of failed/ rejected entries: ", failed_entries)
+    
