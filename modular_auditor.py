@@ -32,7 +32,7 @@ def calculate_tax(amount):
 
 
 def generate_report(total_units, failed_attempts):
-    print("Total units processed:", total_units)
+    print("Total deliveries processed:", total_units)
     print("Number of fialed/ rejected entries:", failed_attempts)
 
 
@@ -46,5 +46,5 @@ while True:
     if value == "quit":
         break
 
-inventory = process_delivery(inventory, value)
-tax = calculate_tax(value)
+    inventory = process_delivery(inventory, value)
+    tax = calculate_tax(value)
