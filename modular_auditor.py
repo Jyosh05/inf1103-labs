@@ -48,3 +48,5 @@ while True:
 
     inventory = process_delivery(inventory, value)
     tax = calculate_tax(value)
+
+generate_report(inventory, failed_entries)
