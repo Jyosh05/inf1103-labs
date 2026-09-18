@@ -22,13 +22,6 @@ def get_valid_input():
     return stock
 
 
-def process_delivery(current_total, new_value):
-    new_value += current_total
-    return new_value
-
-def calculate_tax(amount):
-    tax = amount * 0.1
-    return tax
 
 
 
