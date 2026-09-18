@@ -7,19 +7,19 @@ def get_valid_input():
     stock = input("Enter stock quantity (or type 'quit' to stop): ")
 
     if stock.lower() == 'quit':
-        return "quit"
+        return "quit", False
 
     if not stock.isdigit():
         print("Please enter a valid integer")
-        return None
+        return None, True
 
     stock = int(stock)
 
     if stock < 0:
         print("Negative numbers are not allowed")
-        return None
+        return None, True
 
-    return stock
+    return stock, False
 
 
 def process_delivery(current_total, new_value):
@@ -31,6 +31,9 @@ def calculate_tax(amount):
     return tax
 
 
+def generate_report(total_units, failed_attempts):
+    print("Total units processed:", total_units)
+    print("Number of fialed/ rejected entries:", failed_attempts)
 
 
 
