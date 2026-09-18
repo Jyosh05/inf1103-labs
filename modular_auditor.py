@@ -36,5 +36,12 @@ def generate_report(total_units, failed_attempts):
     print("Number of fialed/ rejected entries:", failed_attempts)
 
 
+while True:
+    value, failed = get_valid_input()
 
-get_valid_input()
+    if failed:
+        failed_entries += 1
+        continue
+
+    if value == "quit":
+        break
