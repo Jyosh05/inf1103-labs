@@ -45,3 +45,6 @@ while True:
 
     if value == "quit":
         break
+
+inventory = process_delivery(inventory, value)
+tax = calculate_tax(value)
