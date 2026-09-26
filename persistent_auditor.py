@@ -7,7 +7,9 @@ def load_inventory():
 
     except FileNotFoundError:
         return 0, []
-    
+
+
+
 
 
 # def get_valid_input():
@@ -58,3 +60,11 @@ def load_inventory():
 #     tax = calculate_tax(value)
 
 # generate_report(inventory, failed_entries)
+
+
+def save_inventory(total_units, transaction_history):
+    file = open("inventory.txt", "w")
+    file.write(str(total_units))
+
+    file.close()
+    
