@@ -1,52 +1,60 @@
 inventory = 0
 failed_entries = 0
 
+def load_inventory():
+    try:
+        file = open("inventory.txt", 'r')
 
-def get_valid_input():
-
-    stock = input("Enter stock quantity (or type 'quit' to stop): ")
-
-    if stock.lower() == 'quit':
-        return "quit", False
-
-    if not stock.isdigit():
-        print("Please enter a valid integer")
-        return None, True
-
-    stock = int(stock)
-
-    if stock < 0:
-        print("Negative numbers are not allowed")
-        return None, True
-
-    return stock, False
+    except FileNotFoundError:
+        return 0, []
+    
 
 
-def process_delivery(current_total, new_value):
-    new_value += current_total
-    return new_value
+# def get_valid_input():
 
-def calculate_tax(amount):
-    tax = amount * 0.1
-    return tax
+#     stock = input("Enter stock quantity (or type 'quit' to stop): ")
+
+#     if stock.lower() == 'quit':
+#         return "quit", False
+
+#     if not stock.isdigit():
+#         print("Please enter a valid integer")
+#         return None, True
+
+#     stock = int(stock)
+
+#     if stock < 0:
+#         print("Negative numbers are not allowed")
+#         return None, True
+
+#     return stock, False
 
 
-def generate_report(total_units, failed_attempts):
-    print("Total deliveries processed:", total_units)
-    print("Number of fialed/ rejected entries:", failed_attempts)
+# def process_delivery(current_total, new_value):
+#     new_value += current_total
+#     return new_value
+
+# def calculate_tax(amount):
+#     tax = amount * 0.1
+#     return tax
 
 
-while True:
-    value, failed = get_valid_input()
+# def generate_report(total_units, failed_attempts):
+#     print("Total deliveries processed:", total_units)
+#     print("Number of fialed/ rejected entries:", failed_attempts)
 
-    if failed:
-        failed_entries += 1
-        continue
 
-    if value == "quit":
-        break
+# while True:
+#     value, failed = get_valid_input()
 
-    inventory = process_delivery(inventory, value)
-    tax = calculate_tax(value)
+#     if failed:
+#         failed_entries += 1
+#         continue
 
-generate_report(inventory, failed_entries)
+#     if value == "quit":
+#         break
+
+#     inventory = process_delivery(inventory, value)
+#     tax = calculate_tax(value)
+
+# generate_report(inventory, failed_entries)
