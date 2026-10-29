@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY Week2_Lab/auditor.py .
 
-CMD ["python", "modular_auditor.py"]
+CMD ["python", "inventory_manager.py"]
